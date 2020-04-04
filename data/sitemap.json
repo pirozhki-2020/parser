@@ -1,0 +1,101 @@
+{
+  "_id": "inshaker",
+  "startUrl": [
+    "https://ru.inshaker.com/cocktails?random_page=2000"
+  ],
+  "selectors": [
+    {
+      "id": "coctail-preview",
+      "type": "SelectorLink",
+      "parentSelectors": [
+        "_root"
+      ],
+      "selector": "a.cocktail-item-preview",
+      "multiple": true,
+      "delay": 0
+    },
+    {
+      "id": "ingredient",
+      "type": "SelectorGroup",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "a.js-tracking-ingredient",
+      "delay": 0,
+      "extractAttribute": ""
+    },
+    {
+      "id": "ingredient amount",
+      "type": "SelectorGroup",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "table:nth-of-type(1) td.amount",
+      "delay": 0,
+      "extractAttribute": ""
+    },
+    {
+      "id": "tool",
+      "type": "SelectorGroup",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "table:nth-of-type(2) a",
+      "delay": 0,
+      "extractAttribute": ""
+    },
+    {
+      "id": "tool-amount",
+      "type": "SelectorGroup",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "table:nth-of-type(2) td.amount",
+      "delay": 0,
+      "extractAttribute": ""
+    },
+    {
+      "id": "coctail",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "h1",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "recipe-steps",
+      "type": "SelectorGroup",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "[itemprop='recipeInstructions'] li",
+      "delay": 0,
+      "extractAttribute": ""
+    },
+    {
+      "id": "coctail-description",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "blockquote",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "image",
+      "type": "SelectorElementAttribute",
+      "parentSelectors": [
+        "coctail-preview"
+      ],
+      "selector": "div.common-image-frame",
+      "multiple": false,
+      "extractAttribute": "style",
+      "delay": 0
+    }
+  ]
+}
